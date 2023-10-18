@@ -39,7 +39,7 @@
             this.label1.Font = new System.Drawing.Font("Lucida Bright", 49.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(153, 141);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1002, 190);
+            this.label1.Size = new System.Drawing.Size(995, 188);
             this.label1.TabIndex = 0;
             this.label1.Text = "STUDENT\r\nENROLLMENT SYSTEM";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -54,6 +54,7 @@
             this.btnAdmin.TabIndex = 1;
             this.btnAdmin.Text = "ADMIN";
             this.btnAdmin.UseVisualStyleBackColor = false;
+            this.btnAdmin.Click += new System.EventHandler(this.btnAdmin_Click);
             // 
             // btnStudent
             // 
@@ -65,6 +66,7 @@
             this.btnStudent.TabIndex = 1;
             this.btnStudent.Text = "STUDENT";
             this.btnStudent.UseVisualStyleBackColor = false;
+            this.btnStudent.Click += new System.EventHandler(this.btnStudent_Click);
             // 
             // Form1
             // 
