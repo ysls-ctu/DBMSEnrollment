@@ -25,6 +25,7 @@ namespace DBMSEnrollment
         private void btnStudent_Click(object sender, EventArgs e)
         {
             Form2 form2 = new Form2();
+            this.Hide();
             form2.ShowDialog();
             
         }
