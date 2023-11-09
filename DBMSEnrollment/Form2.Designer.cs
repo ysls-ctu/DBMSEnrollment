@@ -1,6 +1,6 @@
 ﻿namespace DBMSEnrollment
 {
-    partial class Form2
+    partial class EnrollmentForm
     {
         /// <summary>
         /// Required designer variable.
@@ -55,6 +55,7 @@
             this.dgvDisplayEnrolled = new System.Windows.Forms.DataGridView();
             this.tbExport = new System.Windows.Forms.Button();
             this.cbGender = new System.Windows.Forms.ComboBox();
+            this.btnReturn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDisplayEnrolled)).BeginInit();
             this.SuspendLayout();
             // 
@@ -323,12 +324,26 @@
             this.cbGender.Size = new System.Drawing.Size(304, 28);
             this.cbGender.TabIndex = 5;
             // 
-            // Form2
+            // btnReturn
+            // 
+            this.btnReturn.BackColor = System.Drawing.Color.Transparent;
+            this.btnReturn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnReturn.Font = new System.Drawing.Font("Lucida Bright", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReturn.Location = new System.Drawing.Point(12, 12);
+            this.btnReturn.Name = "btnReturn";
+            this.btnReturn.Size = new System.Drawing.Size(51, 56);
+            this.btnReturn.TabIndex = 13;
+            this.btnReturn.Text = "←";
+            this.btnReturn.UseVisualStyleBackColor = false;
+            this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
+            // 
+            // EnrollmentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1311, 650);
+            this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.cbGender);
             this.Controls.Add(this.dgvDisplayEnrolled);
             this.Controls.Add(this.tbExport);
@@ -356,8 +371,8 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "Form2";
-            this.Text = "Form2";
+            this.Name = "EnrollmentForm";
+            this.Text = "Enrollment Form";
             ((System.ComponentModel.ISupportInitialize)(this.dgvDisplayEnrolled)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -393,5 +408,6 @@
         private System.Windows.Forms.DataGridView dgvDisplayEnrolled;
         private System.Windows.Forms.Button tbExport;
         private System.Windows.Forms.ComboBox cbGender;
+        private System.Windows.Forms.Button btnReturn;
     }
 }

@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace DBMSEnrollment
 {
-    public partial class Form2 : Form
+    public partial class EnrollmentForm : Form
     {
         DataClasses1DataContext db = new DataClasses1DataContext();
        
-        public Form2()
+        public EnrollmentForm()
         {
             InitializeComponent();
         }
@@ -40,12 +40,19 @@ namespace DBMSEnrollment
 
         private void dgvDisplayEnrolled_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            
         }
 
         private void viewdata() 
         {
             dgvDisplayEnrolled.DataSource = db.sp_user_view();
+        }
+
+        private void btnReturn_Click(object sender, EventArgs e)
+        {
+            Form1 form1 = new Form1();
+            this.Hide();
+            form1.ShowDialog();
         }
     }
 }

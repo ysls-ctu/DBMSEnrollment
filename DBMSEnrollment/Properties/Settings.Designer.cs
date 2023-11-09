@@ -33,5 +33,16 @@ namespace DBMSEnrollment.Properties {
                 return ((string)(this["DB_ENROLLMENTSYSTEMConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LAPTOP-L6FJ621L\\SQLEXPRESS;Initial Catalog=testenroldb;Integrated Sec" +
+            "urity=True")]
+        public string testenroldbConnectionString {
+            get {
+                return ((string)(this["testenroldbConnectionString"]));
+            }
+        }
     }
 }

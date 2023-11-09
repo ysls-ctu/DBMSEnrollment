@@ -17,17 +17,19 @@ namespace DBMSEnrollment
             InitializeComponent();
         }
 
-        private void btnAdmin_Click(object sender, EventArgs e)
+        private void btnLogin_Click(object sender, EventArgs e)
         {
-          
-        }
-
-        private void btnStudent_Click(object sender, EventArgs e)
-        {
-            Form2 form2 = new Form2();
+            //Validation for emailaddress and password from user table
+            EnrollmentForm form2 = new EnrollmentForm();
             this.Hide();
             form2.ShowDialog();
-            
+        }
+
+        private void btnSignUp_Click(object sender, EventArgs e)
+        {
+            SignUp signupform = new SignUp();
+            this.Hide();
+            signupform.ShowDialog();
         }
     }
 }
