@@ -16,5 +16,20 @@ namespace DBMSEnrollment
         {
             InitializeComponent();
         }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            //Validation for emailaddress and password from user table
+            EnrollmentForm form2 = new EnrollmentForm();
+            this.Hide();
+            form2.ShowDialog();
+        }
+
+        private void btnSignUp_Click(object sender, EventArgs e)
+        {
+            SignUp signupform = new SignUp();
+            this.Hide();
+            signupform.ShowDialog();
+        }
     }
 }

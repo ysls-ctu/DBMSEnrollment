@@ -1,6 +1,6 @@
 ﻿namespace DBMSEnrollment
 {
-    partial class Form2
+    partial class EnrollmentForm
     {
         /// <summary>
         /// Required designer variable.
@@ -44,7 +44,6 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.tbMName = new System.Windows.Forms.TextBox();
             this.tbLName = new System.Windows.Forms.TextBox();
-            this.tbGender = new System.Windows.Forms.TextBox();
             this.tbMobile = new System.Windows.Forms.TextBox();
             this.tbEmail = new System.Windows.Forms.TextBox();
             this.tbAddress = new System.Windows.Forms.TextBox();
@@ -55,6 +54,8 @@
             this.btnClear = new System.Windows.Forms.Button();
             this.dgvDisplayEnrolled = new System.Windows.Forms.DataGridView();
             this.tbExport = new System.Windows.Forms.Button();
+            this.cbGender = new System.Windows.Forms.ComboBox();
+            this.btnReturn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDisplayEnrolled)).BeginInit();
             this.SuspendLayout();
             // 
@@ -196,7 +197,7 @@
             this.tbMName.Location = new System.Drawing.Point(267, 144);
             this.tbMName.Name = "tbMName";
             this.tbMName.Size = new System.Drawing.Size(304, 28);
-            this.tbMName.TabIndex = 1;
+            this.tbMName.TabIndex = 2;
             // 
             // tbLName
             // 
@@ -204,15 +205,7 @@
             this.tbLName.Location = new System.Drawing.Point(267, 180);
             this.tbLName.Name = "tbLName";
             this.tbLName.Size = new System.Drawing.Size(304, 28);
-            this.tbLName.TabIndex = 1;
-            // 
-            // tbGender
-            // 
-            this.tbGender.Font = new System.Drawing.Font("Lucida Bright", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbGender.Location = new System.Drawing.Point(267, 253);
-            this.tbGender.Name = "tbGender";
-            this.tbGender.Size = new System.Drawing.Size(304, 28);
-            this.tbGender.TabIndex = 1;
+            this.tbLName.TabIndex = 3;
             // 
             // tbMobile
             // 
@@ -220,7 +213,7 @@
             this.tbMobile.Location = new System.Drawing.Point(267, 289);
             this.tbMobile.Name = "tbMobile";
             this.tbMobile.Size = new System.Drawing.Size(304, 28);
-            this.tbMobile.TabIndex = 1;
+            this.tbMobile.TabIndex = 6;
             // 
             // tbEmail
             // 
@@ -228,7 +221,7 @@
             this.tbEmail.Location = new System.Drawing.Point(267, 325);
             this.tbEmail.Name = "tbEmail";
             this.tbEmail.Size = new System.Drawing.Size(304, 28);
-            this.tbEmail.TabIndex = 1;
+            this.tbEmail.TabIndex = 7;
             // 
             // tbAddress
             // 
@@ -236,7 +229,7 @@
             this.tbAddress.Location = new System.Drawing.Point(267, 360);
             this.tbAddress.Name = "tbAddress";
             this.tbAddress.Size = new System.Drawing.Size(304, 28);
-            this.tbAddress.TabIndex = 1;
+            this.tbAddress.TabIndex = 8;
             // 
             // dtpBDay
             // 
@@ -244,25 +237,33 @@
             this.dtpBDay.Location = new System.Drawing.Point(267, 217);
             this.dtpBDay.Name = "dtpBDay";
             this.dtpBDay.Size = new System.Drawing.Size(304, 28);
-            this.dtpBDay.TabIndex = 3;
+            this.dtpBDay.TabIndex = 4;
             // 
             // cbYearLvl
             // 
             this.cbYearLvl.Font = new System.Drawing.Font("Lucida Bright", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbYearLvl.FormattingEnabled = true;
+            this.cbYearLvl.Items.AddRange(new object[] {
+            "1st",
+            "2nd",
+            "3rd",
+            "4th"});
             this.cbYearLvl.Location = new System.Drawing.Point(267, 395);
             this.cbYearLvl.Name = "cbYearLvl";
             this.cbYearLvl.Size = new System.Drawing.Size(304, 28);
-            this.cbYearLvl.TabIndex = 4;
+            this.cbYearLvl.TabIndex = 9;
             // 
             // cbSched
             // 
             this.cbSched.Font = new System.Drawing.Font("Lucida Bright", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbSched.FormattingEnabled = true;
+            this.cbSched.Items.AddRange(new object[] {
+            "Morning",
+            "Evening"});
             this.cbSched.Location = new System.Drawing.Point(267, 432);
             this.cbSched.Name = "cbSched";
             this.cbSched.Size = new System.Drawing.Size(304, 28);
-            this.cbSched.TabIndex = 4;
+            this.cbSched.TabIndex = 10;
             // 
             // btnSubmit
             // 
@@ -271,7 +272,7 @@
             this.btnSubmit.Location = new System.Drawing.Point(444, 476);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(127, 46);
-            this.btnSubmit.TabIndex = 5;
+            this.btnSubmit.TabIndex = 11;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = false;
             // 
@@ -282,9 +283,10 @@
             this.btnClear.Location = new System.Drawing.Point(444, 528);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(127, 46);
-            this.btnClear.TabIndex = 5;
+            this.btnClear.TabIndex = 12;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // dgvDisplayEnrolled
             // 
@@ -296,6 +298,7 @@
             this.dgvDisplayEnrolled.RowTemplate.Height = 24;
             this.dgvDisplayEnrolled.Size = new System.Drawing.Size(679, 466);
             this.dgvDisplayEnrolled.TabIndex = 6;
+            this.dgvDisplayEnrolled.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDisplayEnrolled_CellContentClick);
             // 
             // tbExport
             // 
@@ -308,12 +311,40 @@
             this.tbExport.Text = "Export to CSV";
             this.tbExport.UseVisualStyleBackColor = false;
             // 
-            // Form2
+            // cbGender
+            // 
+            this.cbGender.Font = new System.Drawing.Font("Lucida Bright", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbGender.FormattingEnabled = true;
+            this.cbGender.Items.AddRange(new object[] {
+            "Male",
+            "Female",
+            "Rather not say"});
+            this.cbGender.Location = new System.Drawing.Point(267, 251);
+            this.cbGender.Name = "cbGender";
+            this.cbGender.Size = new System.Drawing.Size(304, 28);
+            this.cbGender.TabIndex = 5;
+            // 
+            // btnReturn
+            // 
+            this.btnReturn.BackColor = System.Drawing.Color.Transparent;
+            this.btnReturn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnReturn.Font = new System.Drawing.Font("Lucida Bright", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReturn.Location = new System.Drawing.Point(12, 12);
+            this.btnReturn.Name = "btnReturn";
+            this.btnReturn.Size = new System.Drawing.Size(51, 56);
+            this.btnReturn.TabIndex = 13;
+            this.btnReturn.Text = "←";
+            this.btnReturn.UseVisualStyleBackColor = false;
+            this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
+            // 
+            // EnrollmentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1311, 650);
+            this.Controls.Add(this.btnReturn);
+            this.Controls.Add(this.cbGender);
             this.Controls.Add(this.dgvDisplayEnrolled);
             this.Controls.Add(this.tbExport);
             this.Controls.Add(this.btnClear);
@@ -326,7 +357,6 @@
             this.Controls.Add(this.tbAddress);
             this.Controls.Add(this.tbEmail);
             this.Controls.Add(this.tbMobile);
-            this.Controls.Add(this.tbGender);
             this.Controls.Add(this.tbLName);
             this.Controls.Add(this.tbMName);
             this.Controls.Add(this.tbFName);
@@ -341,8 +371,8 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "Form2";
-            this.Text = "Form2";
+            this.Name = "EnrollmentForm";
+            this.Text = "Enrollment Form";
             ((System.ComponentModel.ISupportInitialize)(this.dgvDisplayEnrolled)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -367,7 +397,6 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox tbMName;
         private System.Windows.Forms.TextBox tbLName;
-        private System.Windows.Forms.TextBox tbGender;
         private System.Windows.Forms.TextBox tbMobile;
         private System.Windows.Forms.TextBox tbEmail;
         private System.Windows.Forms.TextBox tbAddress;
@@ -378,5 +407,7 @@
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.DataGridView dgvDisplayEnrolled;
         private System.Windows.Forms.Button tbExport;
+        private System.Windows.Forms.ComboBox cbGender;
+        private System.Windows.Forms.Button btnReturn;
     }
 }
