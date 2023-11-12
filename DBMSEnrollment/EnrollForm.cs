@@ -50,9 +50,14 @@ namespace DBMSEnrollment
 
         private void btnReturn_Click(object sender, EventArgs e)
         {
-            Form1 form1 = new Form1();
+            Main form1 = new Main();
             this.Hide();
             form1.ShowDialog();
+        }
+
+        private void EnrollmentForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
