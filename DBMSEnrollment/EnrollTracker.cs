@@ -28,5 +28,15 @@ namespace DBMSEnrollment
         {
             Application.Exit();
         }
+
+        private void btnTracker_Search_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
