@@ -57,9 +57,6 @@ namespace DBMSEnrollment
     partial void InsertTBLUSER(TBLUSER instance);
     partial void UpdateTBLUSER(TBLUSER instance);
     partial void DeleteTBLUSER(TBLUSER instance);
-    partial void Insertstudent_account(student_account instance);
-    partial void Updatestudent_account(student_account instance);
-    partial void Deletestudent_account(student_account instance);
     #endregion
 		
 		public DataClasses1DataContext() : 
@@ -161,14 +158,6 @@ namespace DBMSEnrollment
 			get
 			{
 				return this.GetTable<TBLUSER>();
-			}
-		}
-		
-		public System.Data.Linq.Table<student_account> student_accounts
-		{
-			get
-			{
-				return this.GetTable<student_account>();
 			}
 		}
 		
@@ -491,13 +480,6 @@ namespace DBMSEnrollment
 		public int sp_admin_delete1([global::System.Data.Linq.Mapping.ParameterAttribute(Name="ADMIN_ID", DbType="Int")] System.Nullable<int> aDMIN_ID)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), aDMIN_ID);
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.savestudent_account")]
-		public int savestudent_account([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(1)")] string email, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> studno, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> bday, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(1)")] string password)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), email, studno, bday, password);
 			return ((int)(result.ReturnValue));
 		}
 	}
@@ -3280,188 +3262,6 @@ namespace DBMSEnrollment
 		{
 			this.SendPropertyChanging();
 			entity.TBLUSER = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.student_account")]
-	public partial class student_account : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _stud_acc_id;
-		
-		private string _stud_acc_email;
-		
-		private int _stud_acc_studno;
-		
-		private System.DateTime _stud_acc_bday;
-		
-		private string _stud_acc_password;
-		
-		private System.Nullable<System.DateTime> _stud_acc_registerdate;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void Onstud_acc_idChanging(int value);
-    partial void Onstud_acc_idChanged();
-    partial void Onstud_acc_emailChanging(string value);
-    partial void Onstud_acc_emailChanged();
-    partial void Onstud_acc_studnoChanging(int value);
-    partial void Onstud_acc_studnoChanged();
-    partial void Onstud_acc_bdayChanging(System.DateTime value);
-    partial void Onstud_acc_bdayChanged();
-    partial void Onstud_acc_passwordChanging(string value);
-    partial void Onstud_acc_passwordChanged();
-    partial void Onstud_acc_registerdateChanging(System.Nullable<System.DateTime> value);
-    partial void Onstud_acc_registerdateChanged();
-    #endregion
-		
-		public student_account()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_stud_acc_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int stud_acc_id
-		{
-			get
-			{
-				return this._stud_acc_id;
-			}
-			set
-			{
-				if ((this._stud_acc_id != value))
-				{
-					this.Onstud_acc_idChanging(value);
-					this.SendPropertyChanging();
-					this._stud_acc_id = value;
-					this.SendPropertyChanged("stud_acc_id");
-					this.Onstud_acc_idChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_stud_acc_email", DbType="VarChar(1) NOT NULL", CanBeNull=false)]
-		public string stud_acc_email
-		{
-			get
-			{
-				return this._stud_acc_email;
-			}
-			set
-			{
-				if ((this._stud_acc_email != value))
-				{
-					this.Onstud_acc_emailChanging(value);
-					this.SendPropertyChanging();
-					this._stud_acc_email = value;
-					this.SendPropertyChanged("stud_acc_email");
-					this.Onstud_acc_emailChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_stud_acc_studno", DbType="Int NOT NULL")]
-		public int stud_acc_studno
-		{
-			get
-			{
-				return this._stud_acc_studno;
-			}
-			set
-			{
-				if ((this._stud_acc_studno != value))
-				{
-					this.Onstud_acc_studnoChanging(value);
-					this.SendPropertyChanging();
-					this._stud_acc_studno = value;
-					this.SendPropertyChanged("stud_acc_studno");
-					this.Onstud_acc_studnoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_stud_acc_bday", DbType="Date NOT NULL")]
-		public System.DateTime stud_acc_bday
-		{
-			get
-			{
-				return this._stud_acc_bday;
-			}
-			set
-			{
-				if ((this._stud_acc_bday != value))
-				{
-					this.Onstud_acc_bdayChanging(value);
-					this.SendPropertyChanging();
-					this._stud_acc_bday = value;
-					this.SendPropertyChanged("stud_acc_bday");
-					this.Onstud_acc_bdayChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_stud_acc_password", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
-		public string stud_acc_password
-		{
-			get
-			{
-				return this._stud_acc_password;
-			}
-			set
-			{
-				if ((this._stud_acc_password != value))
-				{
-					this.Onstud_acc_passwordChanging(value);
-					this.SendPropertyChanging();
-					this._stud_acc_password = value;
-					this.SendPropertyChanged("stud_acc_password");
-					this.Onstud_acc_passwordChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_stud_acc_registerdate", DbType="Date")]
-		public System.Nullable<System.DateTime> stud_acc_registerdate
-		{
-			get
-			{
-				return this._stud_acc_registerdate;
-			}
-			set
-			{
-				if ((this._stud_acc_registerdate != value))
-				{
-					this.Onstud_acc_registerdateChanging(value);
-					this.SendPropertyChanging();
-					this._stud_acc_registerdate = value;
-					this.SendPropertyChanged("stud_acc_registerdate");
-					this.Onstud_acc_registerdateChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
 		}
 	}
 	
