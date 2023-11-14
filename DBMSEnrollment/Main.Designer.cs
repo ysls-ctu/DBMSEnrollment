@@ -34,10 +34,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnMain_EnrollTracker = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pbMain_Settings = new System.Windows.Forms.PictureBox();
-            this.btnMain_Exit = new System.Windows.Forms.Button();
+            this.pbMain_AccSettings = new System.Windows.Forms.PictureBox();
+            this.btnMain_Logout = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbMain_Settings)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbMain_AccSettings)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -56,6 +56,7 @@
             // btnMain_EnrollForm
             // 
             this.btnMain_EnrollForm.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnMain_EnrollForm.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMain_EnrollForm.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnMain_EnrollForm.Font = new System.Drawing.Font("Lucida Bright", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMain_EnrollForm.Location = new System.Drawing.Point(26, 140);
@@ -80,6 +81,7 @@
             // btnMain_EnrollTracker
             // 
             this.btnMain_EnrollTracker.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnMain_EnrollTracker.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMain_EnrollTracker.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnMain_EnrollTracker.Font = new System.Drawing.Font("Lucida Bright", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMain_EnrollTracker.Location = new System.Drawing.Point(26, 303);
@@ -103,30 +105,32 @@
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
-            // pbMain_Settings
+            // pbMain_AccSettings
             // 
-            this.pbMain_Settings.Image = ((System.Drawing.Image)(resources.GetObject("pbMain_Settings.Image")));
-            this.pbMain_Settings.Location = new System.Drawing.Point(822, 22);
-            this.pbMain_Settings.Name = "pbMain_Settings";
-            this.pbMain_Settings.Size = new System.Drawing.Size(36, 37);
-            this.pbMain_Settings.TabIndex = 7;
-            this.pbMain_Settings.TabStop = false;
-            this.pbMain_Settings.Click += new System.EventHandler(this.pbMainSettings_Click);
+            this.pbMain_AccSettings.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbMain_AccSettings.Image = ((System.Drawing.Image)(resources.GetObject("pbMain_AccSettings.Image")));
+            this.pbMain_AccSettings.Location = new System.Drawing.Point(718, 17);
+            this.pbMain_AccSettings.Name = "pbMain_AccSettings";
+            this.pbMain_AccSettings.Size = new System.Drawing.Size(36, 37);
+            this.pbMain_AccSettings.TabIndex = 7;
+            this.pbMain_AccSettings.TabStop = false;
+            this.pbMain_AccSettings.Click += new System.EventHandler(this.pbMain_AccSettings_Click);
             // 
-            // btnMain_Exit
+            // btnMain_Logout
             // 
-            this.btnMain_Exit.BackColor = System.Drawing.Color.Red;
-            this.btnMain_Exit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnMain_Exit.Font = new System.Drawing.Font("Lucida Bright", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMain_Exit.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnMain_Exit.Location = new System.Drawing.Point(26, 477);
-            this.btnMain_Exit.Margin = new System.Windows.Forms.Padding(2);
-            this.btnMain_Exit.Name = "btnMain_Exit";
-            this.btnMain_Exit.Size = new System.Drawing.Size(76, 40);
-            this.btnMain_Exit.TabIndex = 8;
-            this.btnMain_Exit.Text = "Exit";
-            this.btnMain_Exit.UseVisualStyleBackColor = false;
-            this.btnMain_Exit.Click += new System.EventHandler(this.btnMain_Exit_Click);
+            this.btnMain_Logout.BackColor = System.Drawing.Color.Red;
+            this.btnMain_Logout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMain_Logout.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnMain_Logout.Font = new System.Drawing.Font("Lucida Bright", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMain_Logout.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnMain_Logout.Location = new System.Drawing.Point(773, 17);
+            this.btnMain_Logout.Margin = new System.Windows.Forms.Padding(2);
+            this.btnMain_Logout.Name = "btnMain_Logout";
+            this.btnMain_Logout.Size = new System.Drawing.Size(102, 32);
+            this.btnMain_Logout.TabIndex = 8;
+            this.btnMain_Logout.Text = "Logout";
+            this.btnMain_Logout.UseVisualStyleBackColor = false;
+            this.btnMain_Logout.Click += new System.EventHandler(this.btnMain_Logout_Click);
             // 
             // Main
             // 
@@ -134,8 +138,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(886, 537);
-            this.Controls.Add(this.btnMain_Exit);
-            this.Controls.Add(this.pbMain_Settings);
+            this.Controls.Add(this.btnMain_Logout);
+            this.Controls.Add(this.pbMain_AccSettings);
             this.Controls.Add(this.btnMain_EnrollTracker);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnMain_EnrollForm);
@@ -149,7 +153,7 @@
             this.Text = "School Enrollment System";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Main_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbMain_Settings)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbMain_AccSettings)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -162,8 +166,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnMain_EnrollTracker;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pbMain_Settings;
-        private System.Windows.Forms.Button btnMain_Exit;
+        private System.Windows.Forms.PictureBox pbMain_AccSettings;
+        private System.Windows.Forms.Button btnMain_Logout;
     }
 }
 

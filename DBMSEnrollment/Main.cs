@@ -17,11 +17,6 @@ namespace DBMSEnrollment
             InitializeComponent();
         }
 
-        private void pbMainSettings_Click(object sender, EventArgs e)
-        {
-            //Code for admin from
-        }
-
         private void btnMain_EnrollTracker_Click(object sender, EventArgs e)
         {
             //Code for tracker form
@@ -39,14 +34,21 @@ namespace DBMSEnrollment
             enrollform.ShowDialog();
         }
 
-        private void btnMain_Exit_Click(object sender, EventArgs e)
+        private void Main_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
         }
 
-        private void Main_FormClosed(object sender, FormClosedEventArgs e)
+        private void pbMain_AccSettings_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            //for account settings
+        }
+
+        private void btnMain_Logout_Click(object sender, EventArgs e)
+        {
+            Login login = new Login();
+            this.Hide();
+            login.ShowDialog();
         }
     }
 }

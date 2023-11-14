@@ -92,9 +92,9 @@ namespace DBMSEnrollment
 
         private void formload()
         {
-            Main form1 = new Main();
+            Main main = new Main();
             this.Hide();
-            form1.ShowDialog();
+            main.ShowDialog();
         }
     }
 }
